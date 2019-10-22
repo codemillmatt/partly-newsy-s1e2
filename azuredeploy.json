@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "siteLocation": {
+        "type": "string",
+        "defaultValue": "East US"
+      },
+      "SKU": {
+        "type": "string",
+        "metadata": {
+          "description": "SKU for Computer Vision API"
+        },
+        "defaultValue": "F0",
+        "allowedValues": [
+          "F0",
+          "S1"
+        ]
+      },
+      "accountName": {
+        "type": "string",
+        "defaultValue": "PartlyNewsy"
+      }
+    },
+    "variables": {
+      "location": "[parameters('siteLocation')]",
+      "locationCode": "[toLower(replace(variables('location'), ' ', ''))]",      
+      "subscriptionId": "[subscription().id]",
+      "accounts_bing_search_name": "[toLower(concat('partlycloudy',parameters('accountName'))]",
+      "cognitiveServicesId": "[concat(resourceGroup().id,'/providers/','Microsoft.CognitiveServices/accounts/', variables('accounts_bing_search_name'))]",
+      "singleQuote": "'"
+    },
+    "resources": [
+      {
+        "type": "Microsoft.CognitiveServices/accounts",
+        "apiVersion": "2017-04-18",
+        "name": "[variables('accounts_bing_search_name')]",
+        "location": "[variables('location')]",
+        "sku": {
+          "name": "[parameters('SKU')]"
+        },
+        "kind": "CognitiveServices",
+        "properties": {}
+      }      
+    ]
+  }
