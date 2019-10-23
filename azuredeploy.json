@@ -29,7 +29,7 @@
       "location": "[parameters('siteLocation')]",
       "locationCode": "[toLower(replace(variables('location'), ' ', ''))]",      
       "subscriptionId": "[subscription().id]",
-      "accounts_bing_search_name": "[toLower(concat(resourceGroup().name,parameters('accountName')))]",
+      "accounts_bing_search_name": "[resourceGroup().name]",
       "cognitiveServicesId": "[concat(resourceGroup().id,'/providers/','Microsoft.CognitiveServices/accounts/', variables('accounts_bing_search_name'))]",
       "singleQuote": "'"
     },
@@ -38,11 +38,11 @@
         "type": "Microsoft.CognitiveServices/accounts",
         "apiVersion": "2017-04-18",
         "name": "[variables('accounts_bing_search_name')]",
-        "location": "[variables('location')]",
+        "location": "global",
         "sku": {
           "name": "[parameters('SKU')]"
         },
-        "kind": "CognitiveServices",
+        "kind": "Bing.Search.v7",
         "properties": {}
       }      
     ]
