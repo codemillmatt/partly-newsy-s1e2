@@ -2,6 +2,8 @@
 
 Welcome back to Partly Cloudy! The show where you learn how to build a cloud-connected Xamarin mobile application. We start from nothing and don't quit until it's ready for the App Store!
 
+![partly cloudy drawing](https://res.cloudinary.com/code-mill-technologies-inc/image/upload/c_scale,e_shadow:77,h_600/v1571800204/PNG_image-E7EAA277EA90-1_tlmaz2.png)
+
 The app we're building is a clone of the Microsoft News app.
 
 In [episode 1](https://devblogs.microsoft.com/xamarin/partly-cloudy?WT.mc_id=partlycloudy-github-masoucou), we set the project up and got it to communicate to an Azure Function (running locally!)
