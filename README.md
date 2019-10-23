@@ -24,11 +24,7 @@ Our app gets the news from the Bing News Search Cognitive Service. This cognitiv
 
 > To find out more about Bing News Search - check out [this Pluralsight course](https://app.pluralsight.com/library/courses/microsoft-cognitive-services-bing-news-search).
 
-In the episode, I demonstrated how to create the News Search service with the Azure Command Line Interface. You can follow along with that, or you can click the `Deploy To Azure` button below.
-
-[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
-
-This button will do all the hard work to provision the Bing News Search account in Azure for you.
+In the episode, I demonstrated how to create the News Search service with the Azure Command Line Interface.
 
 ## Call Bing News From Azure Functions
 
