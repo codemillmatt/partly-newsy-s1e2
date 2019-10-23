@@ -19,14 +19,17 @@
       },
       "accountName": {
         "type": "string",
-        "defaultValue": "PartlyNewsy"
+        "defaultValue": "PartlyNewsy",
+        "metadata": {
+          "description": "Name for your Bing Search Account. This name will be prefixed by the resource group name to ensure uniqueness."
+        }
       }
     },
     "variables": {
       "location": "[parameters('siteLocation')]",
       "locationCode": "[toLower(replace(variables('location'), ' ', ''))]",      
       "subscriptionId": "[subscription().id]",
-      "accounts_bing_search_name": "[toLower(concat('partlycloudy',parameters('accountName'))]",
+      "accounts_bing_search_name": "[toLower(concat(resourceGroup().name,parameters('accountName')))]",
       "cognitiveServicesId": "[concat(resourceGroup().id,'/providers/','Microsoft.CognitiveServices/accounts/', variables('accounts_bing_search_name'))]",
       "singleQuote": "'"
     },
