@@ -4,11 +4,11 @@ Welcome back to Partly Cloudy! The show where you learn how to build a cloud-con
 
 The app we're building is a clone of the Microsoft News app.
 
-In [episode 1](https://devblogs.microsoft.com/xamarin/partly-cloudy?WT.mc_id=partlycloudy-blog-masoucou), we set the project up and got it to communicate to an Azure Function (running locally!)
+In [episode 1](https://devblogs.microsoft.com/xamarin/partly-cloudy?WT.mc_id=partlycloudy-github-masoucou), we set the project up and got it to communicate to an Azure Function (running locally!)
 
-But somehow we're going to need to get the news. And that's what this episode is all about, getting the news from the [Bing News Search API](https://docs.microsoft.com/azure/cognitive-services/Bing-News-Search/?WT.mc_id=partlycloudy-blog-masoucou).
+But somehow we're going to need to get the news. And that's what this episode is all about, getting the news from the [Bing News Search API](https://docs.microsoft.com/azure/cognitive-services/Bing-News-Search/?WT.mc_id=partlycloudy-github-masoucou).
 
-You're gonna need some Azure for this episode, so [get some free Azure here](https://azure.microsoft.com/free?WT.mc_id=partlycloudy-blog-masoucou)!
+You're gonna need some Azure for this episode, so [get some free Azure here](https://azure.microsoft.com/free?WT.mc_id=partlycloudy-github-masoucou)!
 
 ## Episode Recap
 
@@ -24,6 +24,8 @@ Our app gets the news from the Bing News Search Cognitive Service. This cognitiv
 
 In the episode, I demonstrated how to create the News Search service with the Azure Command Line Interface. You can follow along with that, or you can click the `Deploy To Azure` button below.
 
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
 This button will do all the hard work to provision the Bing News Search account in Azure for you.
 
 ## Call Bing News From Azure Functions
@@ -32,7 +34,7 @@ In the episode, we made it a point to not call out to Bing News Search from the 
 
 Why?
 
-The most important reason is to ensure the Bing News Search API key does not get compromised. By having the API key on the server, there's less of a chance of that happening. (And to be super safe, [lock that key in KeyVault](https://docs.microsoft.com/azure/key-vault/?WT.mc_id=partlycloudy-blog-masoucou). Follow this [article for more info](https://codemilltech.com/mobile-apps-azure-keyvault-dont-do-it/)!)
+The most important reason is to ensure the Bing News Search API key does not get compromised. By having the API key on the server, there's less of a chance of that happening. (And to be super safe, [lock that key in KeyVault](https://docs.microsoft.com/azure/key-vault/?WT.mc_id=partlycloudy-github-masoucou). Follow this [article for more info](https://codemilltech.com/mobile-apps-azure-keyvault-dont-do-it/)!)
 
 The other reason is that having the Bing News Search logic in a Function is because that logic will be in a single spot. This means we can tailor the logic for our applications all-up. Be they mobile, web, or whatever. And that custom logic means we can tailor the results to best fit our applications.
 
